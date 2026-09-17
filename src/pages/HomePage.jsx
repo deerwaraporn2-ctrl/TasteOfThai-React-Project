@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getThaiRecipes } from "../services/recipeApi";
-import RecipeCard from "../components/RecipeCard";
+import RecipeList from "../components/RecipeList";
+import heroImage from "../assets/hero-thai.webp";
 
 function HomePage() {
   const [recipes, setRecipes] = useState([]);
@@ -31,20 +32,32 @@ function HomePage() {
   }
 
   return (
-    <main>
-      <h1>Welcome to Taste Of Thai</h1>
-      <p>Discover delicious Thai recipes</p>
-      
-      <div>
-        {recipes.map((recipe) => (
-            <RecipeCard
-            key={recipe.idMeal}
-            recipe={recipe}
-            />
-            ))}
-      </div>
-      
-    </main>
+    <>
+      <section className="hero">
+        <div className="hero-content">
+          <p className="hero-eyebrow">AUTHENTIC THAI FLAVOURS</p>
+
+          <h1>
+            Welcome to <span className="hero-title-accent">Taste Of Thai</span>
+          </h1>
+
+          <p className="hero-text">Discover delicious Thai recipes</p>
+
+          <div className="hero-line"></div>
+        </div>
+
+        <img 
+        className="hero-image"
+        src={heroImage} 
+        alt="" 
+        />
+
+      </section>
+
+      <main>
+        <RecipeList recipes={recipes} />
+      </main>
+    </>
   );
 }
 

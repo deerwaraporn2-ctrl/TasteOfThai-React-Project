@@ -1,12 +1,15 @@
 function RecipeCard({ recipe }) {
     return (
-        <article>
+        <article className="recipe-card">
             <img 
+            className="recipe-card-image"
             src={recipe.strMealThumb}
             alt={recipe.strMeal} 
             />
-
-            <h2>{recipe.strMeal}</h2>
+            
+            <div className="recipe-card-content">
+                <h2>{recipe.strMeal}</h2>
+            </div>            
         </article>
     )
 }
