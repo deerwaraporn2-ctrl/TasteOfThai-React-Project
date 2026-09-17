@@ -142,3 +142,56 @@ main {
   }
 }
 
+.site-footer {
+  margin-top: 60px;
+  background: #ffffff;
+  border-top: 1px solid #eeeeee;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.footer-content h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #222;
+}
+
+.footer-content p {
+  color: #666;
+}
+
+.footer-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 20px 0;
+}
+
+.footer-navigation a {
+  color: #222;
+  text-decoration: none;
+}
+
+.footer-navigation a:hover {
+  color: #d9775f;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .hero-image {
+    position: static;
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    object-fit: cover;
+  }
+}
