@@ -185,6 +185,27 @@ main {
 .recipe-detail li {
   margin-bottom: 8px;
 }
+.recipe-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0 30px;
+}
+
+.recipe-filter button {
+  border: none;
+  background: #fff4e8;
+  color: #333;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.recipe-filter button:hover {
+  background: #d9775f;
+  color: white;
+}
 .site-footer {
   margin-top: auto;
   background: #ffffff;

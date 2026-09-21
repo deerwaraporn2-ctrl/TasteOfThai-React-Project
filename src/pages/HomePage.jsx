@@ -2,6 +2,7 @@ import { useState } from "react";
 import { getThaiRecipes, searchThaiRecipes } from "../services/recipeApi";
 import RecipeList from "../components/RecipeList";
 import heroImage from "../assets/hero-thai.webp";
+import RecipeFilter from "../components/RecipeFilter";
 
 function HomePage({ recipes, loading, error }) {
   if (loading) {
@@ -28,6 +29,8 @@ function HomePage({ recipes, loading, error }) {
       </section>
 
       <main>
+        <RecipeFilter />
+        
         {error ? (
           <div className="search-message">
             <div className="chef-hat">👨‍🍳</div>
