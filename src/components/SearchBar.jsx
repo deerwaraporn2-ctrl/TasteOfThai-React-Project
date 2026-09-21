@@ -6,6 +6,11 @@ function SearchBar({ searchInput, setSearchInput, handleSearch }) {
         placeholder="Search Thai recipes..."
         value={searchInput}
         onChange={(event) => setSearchInput(event.target.value)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            handleSearch();
+          }
+        }}
       />
 
       <button
