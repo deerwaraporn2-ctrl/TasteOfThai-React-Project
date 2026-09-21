@@ -103,6 +103,10 @@ main {
   padding: 40px 24px;
   box-sizing: border-box;
 }
+.instructions p {
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -137,7 +141,50 @@ main {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
+.recipe-card-link {
+  text-decoration: none;
+  color: inherit;
+}
 
+.recipe-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.recipe-detail h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  margin: 0 0 24px;
+  color: #222;
+  text-align: center;
+}
+
+.recipe-detail > img {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto 30px;
+  border-radius: 12px;
+}
+
+.recipe-detail h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #d9775f;
+  margin-top: 35px;
+}
+
+.recipe-detail p {
+  line-height: 1.7;
+}
+
+.recipe-detail ul {
+  padding-left: 24px;
+}
+
+.recipe-detail li {
+  margin-bottom: 8px;
+}
 .site-footer {
   margin-top: auto;
   background: #ffffff;

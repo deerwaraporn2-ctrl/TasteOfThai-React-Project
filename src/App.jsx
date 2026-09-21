@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import FavoritesPage from "./pages/FavoritesPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import RecipeDetailPage from "./pages/RecipeDetailPage";
 import "./App.css";
 
 function App() {
@@ -35,13 +36,13 @@ function App() {
     }
 
     setError("");
-  
+
     try {
       const data = await searchThaiRecipes(searchInput);
       setRecipes(data || []);
     } catch (error) {
       setError("Could not search Thai recipes.");
-    } 
+    }
   }
 
   async function handleHome() {
@@ -79,6 +80,9 @@ function App() {
             }
           />
           <Route path="/favorites" element={<FavoritesPage />} />
+
+          <Route path="/recipe/:id" element={<RecipeDetailPage />} />
+
         </Routes>
 
         <Footer />

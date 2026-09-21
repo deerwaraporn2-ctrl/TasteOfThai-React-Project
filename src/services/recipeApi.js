@@ -23,3 +23,14 @@ export async function searchThaiRecipes(searchInput) {
 
   return data.meals;
 }
+export async function getRecipeById(id) {
+  const response = await fetch(`${API_URL}/lookup.php?i=${id}`);
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch recipe");
+  }
+
+  const data = await response.json();
+
+  return data.meals?.[0];
+}
