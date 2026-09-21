@@ -1,3 +1,9 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -133,7 +139,7 @@ main {
 }
 
 .site-footer {
-  margin-top: 60px;
+  margin-top: auto;
   background: #ffffff;
   border-top: 1px solid #eeeeee;
 }
@@ -201,7 +207,6 @@ main {
     object-fit: cover;
   }
 } */
-
 .search-bar {
   display: flex;
   align-items: center;
@@ -239,7 +244,25 @@ main {
   align-items: center;
   justify-content: center;
 }
+.search-message {
+  background-color: #fdeee9;
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin: 32px auto;
+  max-width: 600px;
+  text-align: center;
+}
 
+.chef-hat {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.search-message p {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
 @media (max-width: 1024px) {
   .hero-image {
     position: static;

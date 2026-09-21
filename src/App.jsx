@@ -29,39 +29,60 @@ function App() {
   }, []);
 
   async function handleSearch() {
+    if (!searchInput.trim()) {
+      setError("Opps...Please enter a recipe name");
+      return;
+    }
+
+    setError("");
+  
     try {
       const data = await searchThaiRecipes(searchInput);
-      setRecipes(data);
+      setRecipes(data || []);
     } catch (error) {
       setError("Could not search Thai recipes.");
-    }
+    } 
   }
 
+  async function handleHome() {
+    setSearchInput("");
+    setError("");
+
+    try {
+      const data = await getThaiRecipes();
+      setRecipes(data);
+    } catch (error) {
+      setError("Could not load Thai recipes.");
+    }
+  }
   return (
     <BrowserRouter>
-      <Header
-        searchInput={searchInput}
-        setSearchInput={setSearchInput}
-        handleSearch={handleSearch}
-      />
-
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-              searchInput={searchInput}
-              setSearchInput={setSearchInput}
-              recipes={recipes}
-              loading={loading}
-              error={error}
-            />
-          }
+      <div className="app-layout">
+        <Header
+          searchInput={searchInput}
+          setSearchInput={setSearchInput}
+          handleSearch={handleSearch}
+          handleHome={handleHome}
         />
-        <Route path="/favorites" element={<FavoritesPage />} />
-      </Routes>
 
-      <Footer />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                searchInput={searchInput}
+                setSearchInput={setSearchInput}
+                recipes={recipes}
+                loading={loading}
+                error={error}
+              />
+            }
+          />
+          <Route path="/favorites" element={<FavoritesPage />} />
+        </Routes>
+
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

@@ -8,9 +8,6 @@ function HomePage({ recipes, loading, error }) {
     return <p>Loading recipes...</p>;
   }
 
-  if (error) {
-    return <p>{error}</p>;
-  }
 
   return (
     <>
@@ -31,8 +28,14 @@ function HomePage({ recipes, loading, error }) {
       </section>
 
       <main>
-       
-        <RecipeList recipes={recipes} />
+        {error ? (
+          <div className="search-message">
+            <div className="chef-hat">👨‍🍳</div>
+            <p>{error}</p>
+          </div>
+        ) : (
+          <RecipeList recipes={recipes} />
+        )}
       </main>
     </>
   );
