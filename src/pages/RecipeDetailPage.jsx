@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { FavoritesContext } from "../context/FavoritesContext";
 import { useParams } from "react-router-dom";
 import { getRecipeById } from "../services/recipeApi";
 
 function RecipeDetailPage() {
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
+
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
 
@@ -22,6 +25,15 @@ function RecipeDetailPage() {
   return (
     <main className="recipe-detail">
       <h1>{recipe.strMeal}</h1>
+      <button
+        type="button"
+        onClick={() => toggleFavorite(recipe)}
+        className="favorite-detail-button"
+      >
+        {favorites.some((favorite) => favorite.idMeal === recipe.idMeal)
+          ? "❤️ Remove from favorites"
+          : "🤍 Add to favorites"}
+      </button>
 
       <img src={recipe.strMealThumb} alt={recipe.strMeal} />
 

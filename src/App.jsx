@@ -6,6 +6,7 @@ import FavoritesPage from "./pages/FavoritesPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
+import { FavoritesProvider } from "./context/FavoritesContext";
 import "./App.css";
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
   }
   return (
     <BrowserRouter>
+    <FavoritesProvider>
       <div className="app-layout">
         <Header
           searchInput={searchInput}
@@ -87,6 +89,7 @@ function App() {
 
         <Footer />
       </div>
+      </FavoritesProvider>
     </BrowserRouter>
   );
 }
