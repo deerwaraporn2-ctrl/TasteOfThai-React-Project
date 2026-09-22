@@ -1,13 +1,20 @@
 import { useState } from "react";
-import { getThaiRecipes, searchThaiRecipes } from "../services/recipeApi";
 import RecipeList from "../components/RecipeList";
 import heroImage from "../assets/hero-thai.webp";
 import RecipeFilter from "../components/RecipeFilter";
 
 function HomePage({ recipes, loading, error }) {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   if (loading) {
     return <p>Loading recipes...</p>;
   }
+const filteredRecipes =
+  selectedCategory === "All"
+    ? recipes
+    : recipes.filter(
+      (recipe) => recipe.strCategory === selectedCategory
+    );
 
 
   return (
@@ -29,7 +36,10 @@ function HomePage({ recipes, loading, error }) {
       </section>
 
       <main>
-        <RecipeFilter />
+        <RecipeFilter 
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
         
         {error ? (
           <div className="search-message">
@@ -37,7 +47,7 @@ function HomePage({ recipes, loading, error }) {
             <p>{error}</p>
           </div>
         ) : (
-          <RecipeList recipes={recipes} />
+          <RecipeList recipes={filteredRecipes} />
         )}
       </main>
     </>

@@ -9,11 +9,17 @@ export async function getThaiRecipes() {
 
   const data = await response.json();
 
-  return data.meals;
+  const recipes = await Promise.all(
+    data.meals.map((meal) => getRecipeById(meal.idMeal))
+  );
+
+  return recipes;
 }
 
 export async function searchThaiRecipes(searchInput) {
-  const response = await fetch(`${API_URL}/search.php?s=${searchInput}`);
+  const response = await fetch(
+    `${API_URL}/search.php?s=${searchInput}`
+  );
 
   if (!response.ok) {
     throw new Error("Failed to search Thai recipes");
@@ -23,8 +29,11 @@ export async function searchThaiRecipes(searchInput) {
 
   return data.meals;
 }
+
 export async function getRecipeById(id) {
-  const response = await fetch(`${API_URL}/lookup.php?i=${id}`);
+  const response = await fetch(
+    `${API_URL}/lookup.php?i=${id}`
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch recipe");
