@@ -1,7 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
-function Header({ searchInput, setSearchInput, handleSearch, handleHome,}) {
+function Header({ searchInput, setSearchInput, handleSearch, handleHome }) {
+  
+  const navigate = useNavigate();
+
+  function handleSearchAndNavigate() {
+    navigate("/");
+    handleSearch();
+  }
+
   return (
     <header className="site-header">
       <div className="header-content">
@@ -10,8 +18,7 @@ function Header({ searchInput, setSearchInput, handleSearch, handleHome,}) {
         <SearchBar
           searchInput={searchInput}
           setSearchInput={setSearchInput}
-          handleSearch={handleSearch}
-          
+          handleSearch={handleSearchAndNavigate}
         />
 
         <nav className="navigation">
