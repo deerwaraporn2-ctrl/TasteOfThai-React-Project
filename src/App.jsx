@@ -78,6 +78,7 @@ function App() {
                 recipes={recipes}
                 loading={loading}
                 error={error}
+                handleHome={handleHome}
               />
             }
           />

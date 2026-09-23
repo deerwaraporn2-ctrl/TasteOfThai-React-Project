@@ -3,8 +3,17 @@ import RecipeList from "../components/RecipeList";
 import heroImage from "../assets/hero-thai.webp";
 import RecipeFilter from "../components/RecipeFilter";
 
-function HomePage({ recipes, loading, error }) {
+function HomePage({ recipes, loading, error, handleHome }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  async function handleCategoryChange(category) {
+    setSelectedCategory(category);
+
+    if(recipes.length === 0) {
+      await handleHome();
+    }
+    
+  }
 
   if (loading) {
     return <p>Loading recipes...</p>;
@@ -38,7 +47,7 @@ const filteredRecipes =
       <main>
         <RecipeFilter 
           selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
+          setSelectedCategory={handleCategoryChange}
         />
         
         {error ? (
