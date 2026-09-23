@@ -3,7 +3,25 @@
   display: flex;
   flex-direction: column;
 }
-
+.favorite-button {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+}
+.favorite-detail-button {
+  display: block;
+  margin: 0 0 30px auto;
+  border: none;
+  background: transparent;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
 .hero {
   position: relative;
   overflow: hidden;
@@ -122,6 +140,7 @@ main {
 }
 .recipe-card-content {
   padding: 16px;
+  min-height: 72px;
 }
 
 .recipe-card-content h2 {
@@ -131,6 +150,7 @@ main {
   color: #222;
 }
 .recipe-card {
+  position: relative;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;

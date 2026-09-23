@@ -1,6 +1,7 @@
 import RecipeCard from "./RecipeCard";
 
 function RecipeList({ recipes }) {
+  
   if (recipes.length === 0) {
     return (
       <div className="search-message">

@@ -21,6 +21,9 @@ function RecipeDetailPage() {
   if (!recipe) {
     return <p>Loading recipe...</p>;
   }
+  const isFavorite = favorites.some(
+    (favorite) => favorite.idMeal === recipe.idMeal,
+  );
 
   return (
     <main className="recipe-detail">
@@ -29,10 +32,9 @@ function RecipeDetailPage() {
         type="button"
         onClick={() => toggleFavorite(recipe)}
         className="favorite-detail-button"
+        aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
       >
-        {favorites.some((favorite) => favorite.idMeal === recipe.idMeal)
-          ? "❤️ Remove from favorites"
-          : "🤍 Add to favorites"}
+        {isFavorite ? "❤️" : "🤍"}
       </button>
 
       <img src={recipe.strMealThumb} alt={recipe.strMeal} />

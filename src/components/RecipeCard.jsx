@@ -3,7 +3,11 @@ import { useContext } from "react";
 import { FavoritesContext } from "../context/FavoritesContext";
 
 function RecipeCard({ recipe }) {
-  const { toggleFavorite } = useContext(FavoritesContext);
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
+  
+  const isFavorite = favorites.some(
+    (favorite) => favorite.idMeal === recipe.idMeal
+  );
 
 
   return (
@@ -28,7 +32,7 @@ function RecipeCard({ recipe }) {
           }}
           className="favorite-button"
         >
-          ❤️
+          {isFavorite ? "❤️" : "🤍"}
         </button>
       </article>
     </Link>
