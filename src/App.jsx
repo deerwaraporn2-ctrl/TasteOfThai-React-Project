@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
 import { FavoritesProvider } from "./context/FavoritesContext";
+import AddRecipePage from "./pages/AddRecipePage";
 import "./App.css";
 
 function App() {
@@ -85,6 +86,8 @@ function App() {
           <Route path="/favorites" element={<FavoritesPage />} />
 
           <Route path="/recipe/:id" element={<RecipeDetailPage />} />
+          
+          <Route path="/add-recipe" element={<AddRecipePage />} />
 
         </Routes>
 
