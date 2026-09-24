@@ -26,6 +26,7 @@ function Header({ searchInput, setSearchInput, handleSearch, handleHome }) {
             Home
           </Link>
           <Link to="/favorites">Favorites</Link>
+          <Link to="/add-recipe">Add Your Recipe</Link>
         </nav>
       </div>
     </header>
