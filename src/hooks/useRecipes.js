@@ -23,7 +23,7 @@ function useRecipes() {
 
   async function handleSearch(searchInput) {
     if (!searchInput.trim()) {
-      setError("Opps...Please enter a recipe name");
+      setError("Oops...Please enter a recipe name");
       return;
     }
 
@@ -32,7 +32,7 @@ function useRecipes() {
     try {
       const data = await searchThaiRecipes(searchInput);
       setRecipes(data || []);
-    } catch (error) {
+    } catch {
       setError("Could not search Thai recipes.");
     }
   }
@@ -42,7 +42,7 @@ function useRecipes() {
     try {
       const data = await getThaiRecipes();
       setRecipes(data);
-    } catch (error) {
+    } catch {
       setError("Could not load Thai recipes.");
     }
   }

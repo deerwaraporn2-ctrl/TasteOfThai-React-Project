@@ -8,7 +8,7 @@ function FavoritesPage() {
   return (
     <main>
       <h1>My Favorites</h1>
-      <p>See Your saved Thai recipes here</p>
+      <p>See your saved Thai recipes here</p>
 
       {favorites.length === 0 ? (
         <div className="search-message">

@@ -1,4 +1,4 @@
-function RecipeFilter({ selectedCategory, setSelectedCategory }) {
+function RecipeFilter({ setSelectedCategory }) {
     return (
         <div className="recipe-filter">
             <button onClick={() => setSelectedCategory("All")}>All</button>

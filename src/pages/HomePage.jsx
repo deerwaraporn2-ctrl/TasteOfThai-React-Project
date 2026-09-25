@@ -9,22 +9,18 @@ function HomePage({ recipes, loading, error, handleHome }) {
   async function handleCategoryChange(category) {
     setSelectedCategory(category);
 
-    if(recipes.length === 0) {
+    if (recipes.length === 0) {
       await handleHome();
     }
-    
   }
 
   if (loading) {
     return <p>Loading recipes...</p>;
   }
-const filteredRecipes =
-  selectedCategory === "All"
-    ? recipes
-    : recipes.filter(
-      (recipe) => recipe.strCategory === selectedCategory
-    );
-
+  const filteredRecipes =
+    selectedCategory === "All"
+      ? recipes
+      : recipes.filter((recipe) => recipe.strCategory === selectedCategory);
 
   return (
     <>
@@ -45,11 +41,8 @@ const filteredRecipes =
       </section>
 
       <main>
-        <RecipeFilter 
-          selectedCategory={selectedCategory}
-          setSelectedCategory={handleCategoryChange}
-        />
-        
+        <RecipeFilter setSelectedCategory={handleCategoryChange} />
+
         {error ? (
           <div className="search-message">
             <div className="chef-hat">👨‍🍳</div>

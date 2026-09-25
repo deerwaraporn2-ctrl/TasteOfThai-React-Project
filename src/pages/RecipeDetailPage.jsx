@@ -8,15 +8,29 @@ function RecipeDetailPage() {
 
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     async function loadRecipe() {
-      const data = await getRecipeById(id);
-      setRecipe(data);
+      try {
+        const data = await getRecipeById(id);
+        setRecipe(data);
+      } catch {
+        setError("Could not load this recipe.");
+      }
     }
 
     loadRecipe();
   }, [id]);
+
+  if (error) {
+  return (
+    <div className="search-message">
+      <div className="chef-hat">👨‍🍳</div>
+      <p>{error}</p>
+    </div>
+  );
+}
 
   if (!recipe) {
     return <p>Loading recipe...</p>;
@@ -40,7 +54,7 @@ function RecipeDetailPage() {
       <img src={recipe.strMealThumb} alt={recipe.strMeal} />
 
       <p>Category: {recipe.strCategory}</p>
-      <p>Cusine: {recipe.strArea}</p>
+      <p>Cuisine: {recipe.strArea}</p>
 
       <h2>Ingredients</h2>
 
@@ -61,7 +75,7 @@ function RecipeDetailPage() {
         })}
       </ul>
 
-      <h2>Instruction</h2>
+      <h2>Instructions</h2>
 
       <div className="instructions">
         {recipe.strInstructions.split(/(?=step \d+)/i).map((step, index) => (

@@ -1,4 +1,4 @@
-function SearchBar({ searchInput, setSearchInput, handleSearch,}) {
+function SearchBar({ searchInput, setSearchInput, handleSearch }) {
   return (
     <div className="search-bar">
       <input
