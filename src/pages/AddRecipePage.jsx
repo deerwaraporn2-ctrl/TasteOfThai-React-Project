@@ -111,6 +111,7 @@ function AddRecipePage() {
 
             <p>
               <strong>Category:</strong>
+              <br />
               {recipe.category}
             </p>
 

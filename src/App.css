@@ -188,6 +188,27 @@
   background: #fff4e8;
   color: #d9775f;
 }
+.personal-recipe button {
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.personal-recipe button:hover {
+  opacity: 0.9;
+}
+.personal-recipe {
+  font-size: 18px;
+}
+
+.personal-recipe h3 {
+  font-size: 22px;
+}
+
 main {
   max-width: 1200px;
   margin: 0 auto;
