@@ -6,6 +6,7 @@ function AddRecipePage() {
   const [ingredients, setIngredients] = useState("");
   const [instructions, setInstructions] = useState("");
   const [formError, setFormError] = useState("");
+  const [editingId, setEditingId] = useState(null);
 
   const [personalRecipes, setPersonalRecipes] = useState(() => {
     const savedRecipes = localStorage.getItem("personalRecipes");
@@ -45,7 +46,22 @@ function AddRecipePage() {
             instructions: instructions,
           };
 
-          setPersonalRecipes([...personalRecipes, newRecipe]);
+          if (editingId) {
+            setPersonalRecipes(
+              personalRecipes.map((recipe) =>
+                recipe.id === editingId
+                  ? { ...recipe, ...newRecipe, id: editingId }
+                  : recipe,
+              ),
+            );
+          } else {
+            setPersonalRecipes([...personalRecipes, newRecipe]);
+          }
+          setRecipeName("");
+          setCategory("");
+          setIngredients("");
+          setInstructions("");
+          setEditingId(null);
         }}
       >
         <label>
@@ -86,13 +102,55 @@ function AddRecipePage() {
         <button type="submit">Save Recipe</button>
       </form>
 
+      <div className="your-recipes">
+        <h2>Your Recipes</h2>
 
-    <div className="your-recipes">
-      <h2>Your Recipes</h2>
+        {personalRecipes.map((recipe) => (
+          <div key={recipe.id} className="personal-recipe">
+            <h3>{recipe.name}</h3>
 
-      {personalRecipes.map((recipe) => (
-        <p key={recipe.id}>{recipe.name}</p>
-      ))}
+            <p>
+              <strong>Category:</strong>
+              {recipe.category}
+            </p>
+
+            <p>
+              <strong>Ingredients:</strong>
+              <br />
+              {recipe.ingredients}
+            </p>
+
+            <p>
+              <strong>Instructions:</strong>
+              <br />
+              {recipe.instructions}
+            </p>
+
+            <button
+              type="button"
+              onClick={() =>
+                setPersonalRecipes(
+                  personalRecipes.filter((item) => item.id !== recipe.id),
+                )
+              }
+            >
+              Delete
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setEditingId(recipe.id);
+                setRecipeName(recipe.name);
+                setCategory(recipe.category);
+                setIngredients(recipe.ingredients);
+                setInstructions(recipe.instructions);
+              }}
+            >
+              Edit
+            </button>
+          </div>
+        ))}
       </div>
     </main>
   );
