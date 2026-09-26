@@ -177,11 +177,13 @@
 }
 
 .navigation a {
-  color: #222;
+  color: #666161;
   text-decoration: none;
   font-size: 16px;
   padding: 10px 16px;
   border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .navigation a:hover {
@@ -351,11 +353,13 @@ main {
 }
 
 .footer-navigation a {
-  color: #222;
+  color: #666161;
   text-decoration: none;
   font-size: 16px;
   padding: 10px 16px;
   border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .footer-navigation a:hover {

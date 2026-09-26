@@ -14,6 +14,12 @@ function RecipeDetailPage() {
     async function loadRecipe() {
       try {
         const data = await getRecipeById(id);
+
+        if (!data) {
+          setError("Could not find this recipe.");
+          return;
+        }
+        
         setRecipe(data);
       } catch {
         setError("Could not load this recipe.");
@@ -24,13 +30,13 @@ function RecipeDetailPage() {
   }, [id]);
 
   if (error) {
-  return (
-    <div className="search-message">
-      <div className="chef-hat">👨‍🍳</div>
-      <p>{error}</p>
-    </div>
-  );
-}
+    return (
+      <div className="search-message">
+        <div className="chef-hat">👨‍🍳</div>
+        <p>{error}</p>
+      </div>
+    );
+  }
 
   if (!recipe) {
     return <p>Loading recipe...</p>;

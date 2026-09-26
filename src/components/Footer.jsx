@@ -12,6 +12,7 @@ function Footer(){
                 <nav className="footer-navigation">
                     <Link to="/">Home</Link>
                     <Link to="/favorites">Favorites</Link>
+                    <Link to="/add-recipe">Add Your Recipe</Link>
                 </nav>
 
                 <p className="copyright">
