@@ -59,7 +59,7 @@ function handleSearch() {
 
         </Routes>
 
-        <Footer />
+        <Footer handleHome={handleHome} />
       </div>
       </FavoritesProvider>
     </BrowserRouter>

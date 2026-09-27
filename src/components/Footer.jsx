@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function Footer(){
+function Footer({ handleHome }){
 
     return (
         <footer className="site-footer">
@@ -10,7 +10,7 @@ function Footer(){
                 <p>Authentic Thai Flavors & recipes</p>
 
                 <nav className="footer-navigation">
-                    <Link to="/">Home</Link>
+                    <Link to="/" onClick={handleHome}>Home</Link>
                     <Link to="/favorites">Favorites</Link>
                     <Link to="/add-recipe">Add Your Recipe</Link>
                 </nav>
