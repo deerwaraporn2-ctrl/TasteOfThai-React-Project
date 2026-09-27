@@ -219,6 +219,7 @@ main {
 }
 .instructions p {
   margin-bottom: 18px;
+  font-size: 18px;
   line-height: 1.7;
 }
 .recipe-grid {
@@ -299,7 +300,9 @@ main {
 }
 
 .recipe-detail li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 .recipe-filter {
   display: flex;
