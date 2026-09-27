@@ -235,8 +235,8 @@ main {
   display: block;
 }
 .recipe-card-content {
-  padding: 16px;
-  min-height: 72px;
+  padding: 16px 56px 16px 16px;;
+  min-height: 110px;
 }
 
 .recipe-card-content h2 {
