@@ -27,7 +27,6 @@ Users can search for recipes, filter recipes by category, view recipe details, s
 - Save personal recipes using LocalStorage
 - Form validation with error feedback
 - Loading and error states
-- Responsive design
 
 ## How to run the project locally
 
@@ -67,6 +66,5 @@ npm run dev
 
 - Extended error handling with empty states and API/network error feedback
 - Thoughtful component architecture with reusable components and a custom `useRecipes` hook
-- Responsive design for mobile and larger screens
 - Extended functionality including search, category filtering, favorites, and personal recipes
 - Clear and maintained Git commit history with descriptive commit messages
