@@ -1,44 +1,39 @@
-# TasteOfThai
+# TasteOfThai🍜
+A responsive Thai recipe web application built with React and JavaScript. Users can explore Thai dishes, search for recipes, save favorites, and create their own recipes.
 
-TasteOfThai is a React application for discovering Thai recipes using TheMealDB API.
-
-Users can search for recipes, filter recipes by category, view recipe details, save favorite recipes, and add their own recipes.
+This project was developed as part of my Frontend Development studies at Nackademin.
 
 ## Technologies
-
 - React
 - JavaScript
 - React Router
+- Context API
 - CSS
-- TheMealDB API
+- TheMealDB REST API
 - LocalStorage
 - Vite
+- Git & GitHub
 
 ## Features
+Browse Thai Recipes – Explore recipes fetched from TheMealDB API.
 
-- Browse Thai recipes from TheMealDB API
-- Search for recipes
-- Filter recipes by category
-- View detailed recipe information
-- Add and remove favorite recipes
-- Persist favorites using LocalStorage
-- Create personal recipes
-- Edit or delete your added personal recipe
-- Persist personal recipes using LocalStorage
-- Form validation with error feedback
-- Loading and error states
-- Responsive user interface
+Search Recipes – Find recipes by name.
+
+Recipe Details – View ingredients, cooking instructions, and recipe images.
+
+Favorites – Add or remove API recipes from a favorites list.
+
+Create Personal Recipes – Add recipes with ingredients and cooking instructions.
+
+Edit & Delete – Manage personal recipes.
+
+Image Upload – Add images to personal recipes.
+
+Local Storage – Save favorites and personal recipes in the browser.
+
+Responsive Design – Layout designed for different screen sizes.
 
 ## Getting Started
-
-Prerequisites
-
-- Node.js
-
-- npm
-
-## Installation
-
 1. Clone the repository:
 
 git clone https://github.com/deerwaraporn2-ctrl/TasteOfThai-React-Project
@@ -47,24 +42,36 @@ git clone https://github.com/deerwaraporn2-ctrl/TasteOfThai-React-Project
 
 cd TasteOfThai-React-Project
 
-Install dependencies:
+3. Install dependencies:
 
 npm install
 
 4. Start the development server:
- 
+
 npm run dev
 
 5. Open the local URL displayed in your terminal.
 
 ## Project structure
-
 The application is organized into reusable React components, pages, context, hooks, and helper functions.
 
 ## API
-
 Recipe data is provided by TheMealDB.
 
-## Author
+## Data Storage
+The application uses TheMealDB API for public recipe data.
 
-Developed as part of my Frontend Development studies at Nackademin.
+Personal recipes, uploaded images, and favorites are stored locally in the user's browser using LocalStorage. No user account or backend database is required.
+
+
+## Future Improvements
+Add favorite functionality for personal recipes.
+
+Improve image storage with a backend or cloud service.
+
+Add user accounts and personal recipe collections.
+
+## About the Project
+TasteOfThai demonstrates my experience with React components, state management, Context API, REST API integration, form handling, CRUD operations, browser storage, and responsive frontend development.
+
+Developed by Waraporn Suwansukho.
