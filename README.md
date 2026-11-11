@@ -16,55 +16,55 @@ Users can search for recipes, filter recipes by category, view recipe details, s
 
 ## Features
 
-- Browse Thai recipes
+- Browse Thai recipes from TheMealDB API
 - Search for recipes
 - Filter recipes by category
-- View recipe details
+- View detailed recipe information
 - Add and remove favorite recipes
-- Save favorites using LocalStorage
-- Add your own recipes
+- Persist favorites using LocalStorage
+- Create personal recipes
 - Edit or delete your added personal recipe
-- Save personal recipes using LocalStorage
+- Persist personal recipes using LocalStorage
 - Form validation with error feedback
 - Loading and error states
+- Responsive user interface
 
-## How to run the project locally
+## Getting Started
 
-1. Clone the repository.
-2. Open the project folder in the terminal.
-3. Install the dependencies:
-```bash
+Prerequisites
+
+- Node.js
+
+- npm
+
+## Installation
+
+1. Clone the repository:
+
+git clone https://github.com/deerwaraporn2-ctrl/TasteOfThai-React-Project
+
+2. Navigate to the project folder:
+
+cd TasteOfThai-React-Project
+
+Install dependencies:
+
 npm install
-```
-4. Start the development server: 
-```bash
+
+4. Start the development server:
+ 
 npm run dev
-```
-5. Open the local URL shown in the terminal.
 
-## Requirements fulfilled
+5. Open the local URL displayed in your terminal.
 
-### G requirements
+## Project structure
 
-- At least 5 clearly separated React components with clear responsibilities
-- Reasonable folder structure separating components, pages/views, and helper functions
-- React Router with multiple pages/views and navigation without page reload
-- Shared state between components using React Context
-- Local state used for form fields and shared state used where needed
-- External API integration using TheMealDB API
-- Loading state while recipes are being fetched
-- Error handling for failed API requests
-- Form for creating and editing personal recipes
-- Required-field validation with clear error feedback
-- Data persistence using LocalStorage
-- Consistent naming and formatting
-- No unused variables, components, or console.log statements
-- Project maintained with Git and multiple descriptive commits
-- README with project description and local setup instructions
+The application is organized into reusable React components, pages, context, hooks, and helper functions.
 
-### VG requirements
+## API
 
-- Extended error handling with empty states and API/network error feedback
-- Thoughtful component architecture with reusable components and a custom `useRecipes` hook
-- Extended functionality including search, category filtering, favorites, and personal recipes
-- Clear and maintained Git commit history with descriptive commit messages
+Recipe data is provided by TheMealDB.
+
+## Author
+
+Developed as part of my Frontend Development studies at Nackademin.

@@ -1,66 +1,73 @@
 import { useState } from "react";
 import useRecipes from "./hooks/useRecipes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import HomePage from "./pages/HomePage";
 import FavoritesPage from "./pages/FavoritesPage";
+import RecipeDetailPage from "./pages/RecipeDetailPage";
+import AddRecipePage from "./pages/AddRecipePage";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import RecipeDetailPage from "./pages/RecipeDetailPage";
+
 import { FavoritesProvider } from "./context/FavoritesContext";
-import AddRecipePage from "./pages/AddRecipePage";
+import { PersonalRecipesProvider } from "./context/PersonalRecipesContext";
+
 import "./App.css";
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
 
   const {
-  recipes,
-  loading,
-  error,
-  handleSearch: searchRecipes,
-  handleHome,
-} = useRecipes();
+    recipes,
+    loading,
+    error,
+    handleSearch: searchRecipes,
+    handleHome,
+  } = useRecipes();
 
-function handleSearch() {
-  searchRecipes(searchInput);
-  setSearchInput(""); 
-}
+  function handleSearch() {
+    searchRecipes(searchInput);
+    setSearchInput("");
+  }
 
   return (
     <BrowserRouter>
-    <FavoritesProvider>
-      <div className="app-layout">
-        <Header
-          searchInput={searchInput}
-          setSearchInput={setSearchInput}
-          handleSearch={handleSearch}
-          handleHome={handleHome}
-        />
+      <FavoritesProvider>
+        <PersonalRecipesProvider>
+          <div className="app-layout">
+            <Header
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
+              handleSearch={handleSearch}
+              handleHome={handleHome}
+            />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <HomePage
-                searchInput={searchInput}
-                setSearchInput={setSearchInput}
-                recipes={recipes}
-                loading={loading}
-                error={error}
-                handleHome={handleHome}
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <HomePage
+                    searchInput={searchInput}
+                    setSearchInput={setSearchInput}
+                    recipes={recipes}
+                    loading={loading}
+                    error={error}
+                    handleHome={handleHome}
+                  />
+                }
               />
-            }
-          />
-          <Route path="/favorites" element={<FavoritesPage />} />
 
-          <Route path="/recipe/:id" element={<RecipeDetailPage />} />
-          
-          <Route path="/add-recipe" element={<AddRecipePage />} />
+              <Route path="/favorites" element={<FavoritesPage />} />
 
-        </Routes>
+              <Route path="/recipe/:id" element={<RecipeDetailPage />} />
 
-        <Footer handleHome={handleHome} />
-      </div>
+              <Route path="/add-recipe" element={<AddRecipePage />} />
+            </Routes>
+
+            <Footer handleHome={handleHome} />
+          </div>
+        </PersonalRecipesProvider>
       </FavoritesProvider>
     </BrowserRouter>
   );
