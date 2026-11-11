@@ -1,9 +1,13 @@
 # TasteOfThai🍜
-A responsive Thai recipe web application built with React and JavaScript. Users can explore Thai dishes, search for recipes, save favorites, and create their own recipes.
+A responsive Thai recipe web application built with React and JavaScript. Explore Thai dishes, search for recipes, save favorites, and create and manage your own recipes.
 
-This project was developed as part of my Frontend Development studies at Nackademin.
+Developed as part of my Frontend Development studies at Nackademin.
 
-## Technologies
+## Live Demo
+https://deerwaraporn2-ctrl.github.io/TasteOfThai-React-Project
+
+
+## Technologies 
 - React
 - JavaScript
 - React Router
@@ -13,25 +17,27 @@ This project was developed as part of my Frontend Development studies at Nackade
 - LocalStorage
 - Vite
 - Git & GitHub
+- Github Actions
 
-## Features
+## Features 
 Browse Thai Recipes – Explore recipes fetched from TheMealDB API.
 
 Search Recipes – Find recipes by name.
 
-Recipe Details – View ingredients, cooking instructions, and recipe images.
+Recipe Details – View ingredients, cooking instructions, and images.
 
-Favorites – Add or remove API recipes from a favorites list.
+Favorites – Add and remove API recipes from your favorites list.
 
-Create Personal Recipes – Add recipes with ingredients and cooking instructions.
+Personal Recipes – Create your own recipes with ingredients, instructions, and images.
 
-Edit & Delete – Manage personal recipes.
+Edit & Delete – Update or remove your personal recipes.
 
-Image Upload – Add images to personal recipes.
+Image Upload – Upload images for personal recipes.
 
-Local Storage – Save favorites and personal recipes in the browser.
+Local Storage – Persist favorites and personal recipes in the browser.
 
-Responsive Design – Layout designed for different screen sizes.
+Responsive Design – Designed for different screen sizes.
+
 
 ## Getting Started
 1. Clone the repository:
@@ -56,7 +62,7 @@ npm run dev
 The application is organized into reusable React components, pages, context, hooks, and helper functions.
 
 ## API
-Recipe data is provided by TheMealDB.
+Recipe data is provided by TheMealDB, a public recipe API.
 
 ## Data Storage
 The application uses TheMealDB API for public recipe data.
