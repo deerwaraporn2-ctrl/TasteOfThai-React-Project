@@ -32,7 +32,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename="/TasteOfThai-React-Project">
       <FavoritesProvider>
         <PersonalRecipesProvider>
           <div className="app-layout">
