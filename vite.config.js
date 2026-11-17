@@ -1,12 +1,10 @@
-
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/TasteOfThai-React-Project/",
-  plugins: [
-    react(),
-    babel({ presets: [reactCompilerPreset()] })
-  ],
+  base: process.env.GITHUB_PAGES 
+    ? "/TasteOfThai-React-Project/" 
+    : "/",
+  plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
 });
